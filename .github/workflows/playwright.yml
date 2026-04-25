@@ -22,7 +22,13 @@ jobs:
     - name: Run Playwright tests
       env:
         PLAYWRIGHT_SERVICE_URL: ${{ vars.PLAYWRIGHT_SERVICE_URL}}
-      run: npx playwright test --config=playwright.service.config.js --workers=4 --grep '@passed'
+      run: |
+        npx playwright test \
+          --config=playwright.service.config.js \
+          --workers=4 \
+          --project=chrome \
+          --grep '@passed|@failed1' \
+          --reporter=line,allure-playwright
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
       with:
