@@ -11,7 +11,7 @@ await page.goto('https://testautomationpractice.blogspot.com/')
 await page.on('dialog', async dialogvariable=>{
 expect(dialogvariable.type()).toContains('alert').toBeTruthy()
 expect(dialogvariable.message()).toBe('I am an alert box!')
-await dialogvariable.accept()//to click on ok button
+await dialogvariable.accept()//to click on ok button this is changed in local
 }
 )
 await page.click('id=alertBtn')
