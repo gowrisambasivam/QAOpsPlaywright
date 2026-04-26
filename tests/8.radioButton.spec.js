@@ -1,5 +1,5 @@
 
-/*const {test, expect}=require('@playwright/test')
+const {test, expect}=require('@playwright/test')
 test('radioButton', async({page})=>{
 
     await page.goto('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login')
@@ -9,8 +9,8 @@ test('radioButton', async({page})=>{
     await page.locator("//span[normalize-space()='My Info']").click()
     await page.locator("//label[normalize-space()='Female']").click()
     await expect(await page.locator("//label[normalize-space()='Female']")).toBeChecked()
-  await expect(await page.locator("input[value='2']").isChecked()).toBeTruthy()
-    await expect(await page.locator("input[value='1']").isChecked()).toBeFalsy()
+  await expect(await page.locator("input[type='radio'][value='2']").isChecked()).toBeTruthy()
+    await expect(await page.locator("input[type='radio'][value='1']").isChecked()).toBeFalsy()
     
 }
-)*/
+)
